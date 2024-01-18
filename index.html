@@ -371,4 +371,16 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 <script src="https://millionon.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.18.2" id="elementor-frontend-js"></script>
 <script src="https://millionon.com/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.15.0" id="pro-elements-handlers-js"></script>
 	</body>
+	
+<script>
+    window.onload = function () {
+        var links = document.getElementsByTagName("a");
+        for (var i = 0, n = links.length; i < n; i++) {
+            var href = links[i].href.trim() +
+                    (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                    document.location.search.replace('?', '').toString();
+            links[i].href = href;
+        }
+    }
+</script>
 </html>
